@@ -16,14 +16,21 @@
       <span class="text">Soundboard</span>
       <span class="shimmer"></span> -->
     </button>
-    <button class="glow-on-hover" onclick="window.location.href='astronomy.guide.study.html'" class="button">
+    <button class="glow-on-hover" onclick="createIframe()" class="button">
       <span class="text">Games</span>
       <span class="shimmer"></span>
-    </button> <!-- 
-    <button onclick="window.location.href='beta.html'" class="button">
-      <span class="text">Beta</span>
-      <span class="shimmer"></span>
-    </button> -->
+    </button> 
+<div id="overlay">
+    <div id="iframeContainer">
+        <iframe src="https://www.example.com" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    function createIframe() {
+        document.getElementById("overlay").style.display = "block";
+    }
+</script>
 
     
     </html>
