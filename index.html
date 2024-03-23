@@ -1,1 +1,250 @@
+ <script src="script.js"></script>
+   <h1 id="main-title"></h1> 
+    <!DOCTYPE html>
+    <script src="MENUAIUOFHUAFEIHIUFHIDHIHGAIOHGOAIHG/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <html lang="en">
+    
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    </head> <!--
+    <button class="button" onclick="window.location.href='https://0.00z.us'">
+      <span class="text">Soundboard</span>
+      <span class="shimmer"></span> -->
+    </button>
+    <button class="glow-on-hover" onclick="window.location.href='games.html'" class="button">
+      <span class="text">Games</span>
+      <span class="shimmer"></span>
+    </button> <!-- 
+    <button onclick="window.location.href='beta.html'" class="button">
+      <span class="text">Beta</span>
+      <span class="shimmer"></span>
+    </button> -->
 
+    
+    </html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #1a1a1a;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          color: #fff;
+          font-family: 'Arial', sans-serif;
+        }
+    
+        canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+        }
+    
+        #buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+      </style>
+    </head>
+    
+    <body>
+      <canvas id="pixel-canvas"></canvas>
+      <style>
+        body {
+          margin: 0;
+          overflow: hidden;
+        }
+    
+        canvas {
+          display: block;
+        }
+      </style>
+      <style>
+        .glow-on-hover {
+          width: 220px;
+          height: 50px;
+          border: none;
+          outline: none;
+          color: #fff;
+          background: #111;
+          cursor: pointer;
+          position: relative;
+          z-index: 0;
+          border-radius: 10px;
+          cursor: url(pack2699_32x32.png), auto;
+        }
+    
+        .glow-on-hover:before {
+          content: '';
+          background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          background-size: 400%;
+          z-index: -1;
+          filter: blur(5px);
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          animation: glowing 20s linear infinite;
+          opacity: 0;
+          transition: opacity .3s ease-in-out;
+          border-radius: 10px;
+        }
+    
+        .glow-on-hover:active {
+          color: #000
+        }
+    
+        .glow-on-hover:active:after {
+          background: transparent;
+        }
+    
+        .glow-on-hover:hover:before {
+          opacity: 1;
+        }
+    
+        .glow-on-hover:after {
+          z-index: -1;
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #111;
+          left: 0;
+          top: 0;
+          border-radius: 10px;
+        }
+    
+        @keyframes glowing {
+          0% {
+            background-position: 0 0;
+          }
+    
+          50% {
+            background-position: 400% 0;
+          }
+    
+          100% {
+            background-position: 0 0;
+          }
+        }
+      </style>
+      </head>
+    
+    
+      <body>
+        <canvas id="pixel-canvas"></canvas>
+        <script>
+          const canvas = document.getElementById('pixel-canvas');
+          const ctx = canvas.getContext('2d');
+          const buttonsContainer = document.getElementById('buttons');
+    
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+    
+          const pixels = [];
+          const pixelCount = 200;
+    
+          function initPixels() {
+            for (let i = 0; i < pixelCount; i++) {
+              pixels.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: Math.random() * 4 - 2,
+                vy: Math.random() * 4 - 2,
+                size: Math.random() * 3 + 1,
+                color: '#8a2be2'
+              });
+            }
+          }
+    
+          function updatePixels() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+            for (let i = 0; i < pixels.length; i++) {
+              const pixel = pixels[i];
+    
+              pixel.x += pixel.vx;
+              pixel.y += pixel.vy;
+    
+              // Boundary checks to keep pixels within the visible area
+              if (pixel.x < 0 || pixel.x > canvas.width - pixel.size) {
+                pixel.vx = -pixel.vx;
+              }
+    
+              if (pixel.y < 0 || pixel.y > canvas.height - pixel.size) {
+                pixel.vy = -pixel.vy;
+              }
+    
+              ctx.fillStyle = pixel.color;
+              ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
+            }
+          }
+    
+          function animate() {
+            updatePixels();
+            requestAnimationFrame(animate);
+          }
+    
+          function startAnimation() {
+            initPixels();
+            animate();
+            // Display buttons immediately without delay
+          }
+    
+          window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+          });
+    
+          startAnimation();
+        </script>
+      </body>
+    
+    </html>
+    
+  
+  
+    </head>
+    
+    <body>
+    
+      <!-- Your existing content goes here -->
+    
+      <!-- Updates Section 
+      <div id="updates-section">
+        <h2>Updates</h2>
+        <div id="updates-box">
+          <p>3/16/2024 Fix Buttons</p>
+          <p>3/15/2024 Updated Buttons</p>
+          <p>3/15/2024 Added Updates</p>
+        </div>-->
+    
+    </body>
+</head>
+<body>
+<script>
+function openURLInAboutBlank() {
+  var url = 'https://www.google.com';
+  var newTab = window.open('about:blank', '_blank');
+  newTab.document.write('<html><head><title>Google</title></head><body><iframe src="' + url + '" style="border: none; width: 100vw; height: 100vh;"></iframe></body></html>');
+}
+</script>
+</body>
+</html>
+    
+    </html>
+    </script>
+    
