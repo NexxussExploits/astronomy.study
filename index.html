@@ -32,17 +32,24 @@ document.addEventListener('keypress', function(event) {
     }
 });
 </script>
+     <div class="wrapper">
    <button class="glow-on-hover" onclick="createIframe()" class="button">
       <span class="text">Games</span>
       <span class="shimmer"></span>
     </button> 
+     </div>
 <div id="overlay">
     <div id="iframeContainer">
         <iframe src="astronomy.guide.study.html" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>
   <style>
-    
+    .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
     .runner-container {
       max-width: 600px;
       margin: 0 auto;
