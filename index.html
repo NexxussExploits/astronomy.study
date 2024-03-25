@@ -487,5 +487,52 @@ function resetChanges() {
 }
      </script>
     </html>
-    </script>
+    <style>
+  #userDetails {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+</style>
+</head>
+<body>
+<h1>Your Website</h1>
+
+<div id="userDetails">
+  <h2>User Information</h2>
+  <div id="deviceInfo">
+    <h3>Device Information</h3>
+    <p><strong>Device Type:</strong> <span id="deviceType"></span></p>
+    <p><strong>Operating System:</strong> <span id="os"></span></p>
+    <p><strong>Browser:</strong> <span id="browser"></span></p>
+    <p><strong>Screen Resolution:</strong> <span id="resolution"></span></p>
+  </div>
+
+  <div id="connectionInfo">
+    <h3>Connection Information</h3>
+    <p><strong>ISP:</strong> <span id="isp"></span></p>
+    <p><strong>Connection Type:</strong> <span id="connectionType"></span></p>
+    <p><strong>Connection Speed:</strong> <span id="speed"></span></p>
+    <p><strong>Geographic Location:</strong> <span id="location"></span></p>
+  </div>
+</div>
+
+<script>
+  // JavaScript to fetch and display user device and connection information
+  document.getElementById("deviceType").innerText = navigator.userAgent;
+  document.getElementById("os").innerText = navigator.platform;
+  document.getElementById("browser").innerText = navigator.appVersion;
+  document.getElementById("resolution").innerText = screen.width + "x" + screen.height;
+
+  // Example connection information (replace with actual data)
+  document.getElementById("isp").innerText = "Example ISP";
+  document.getElementById("connectionType").innerText = "Wi-Fi";
+  document.getElementById("speed").innerText = "100 Mbps";
+  document.getElementById("location").innerText = "New York, USA";
+</script>
+</body>
+</html>
     
