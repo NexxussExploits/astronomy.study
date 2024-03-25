@@ -100,6 +100,22 @@ document.addEventListener('keypress', function(event) {
         <iframe src="astronomy.guide.study.html" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>
+   <script>
+    const isDevToolsOpen = () => {
+      const widthThreshold = 160;
+      const heightThreshold = 160;
+      
+      return window.outerWidth - window.innerWidth > widthThreshold || window.outerHeight - window.innerHeight > heightThreshold;
+    };
+    
+    const checkAndCloseIfDevToolsOpen = () => {
+      if (isDevToolsOpen()) {
+        window.location.href = 'about:blank';
+      }
+    };
+    
+    setInterval(checkAndCloseIfDevToolsOpen, 1000);
+  </script>
   <style>
 .site-header {
     text-align: center;
