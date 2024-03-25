@@ -419,7 +419,14 @@ document.addEventListener('keypress', function(event) {
           startAnimation();
         </script>
       </body>
-    
+       <script>
+    document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'q') {
+        // Call your desired function here
+        yourFunction();
+    }
+});
+       </script>
     </html>
     
   
