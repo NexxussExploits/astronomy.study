@@ -434,7 +434,47 @@ function openURLInAboutBlank() {
 </script>
 </body>
 </html>
-    
+    <body>
+    <div class="container">
+        <h1>Tab Cloak System</h1>
+        <label for="faviconInput">Enter Favicon Link:</label>
+        <input type="text" id="faviconInput" placeholder="Enter favicon link">
+        <button onclick="applyFavicon()">Apply Favicon</button>
+        <label for="tabNameInput">Enter Tab Name:</label>
+        <input type="text" id="tabNameInput" placeholder="Enter tab name">
+        <button onclick="applyTabName()">Apply Tab Name</button>
+        <button onclick="resetChanges()">Reset</button>
+    </div>
+<style>
+ .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+     <script>function applyFavicon() {
+    const faviconInput = document.getElementById('faviconInput').value;
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = faviconInput;
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
+function applyTabName() {
+    const tabNameInput = document.getElementById('tabNameInput').value;
+    document.title = tabNameInput;
+}
+
+function resetChanges() {
+    const defaultFavicon = 'default-favicon.ico'; // Set your default favicon link here
+    const defaultTabName = 'Tab Cloak System'; // Set your default tab name here
+
+    applyFavicon(defaultFavicon);
+    applyTabName(defaultTabName);
+}
+     </script>
     </html>
     </script>
     
