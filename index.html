@@ -101,8 +101,10 @@ updateFPS();
    </head>
 <body>
    <center>
-    <div class="settings">
-       
+    <div class="container">
+       <label for="panicKey">Enter Panic Button Key:</label>
+        <input type="text" id="panicKey" placeholder="Enter a key...">
+        <button id="applyButton">Apply</button>
     </div>
     <div class="panicbutton" id="panicbutton">
         <iframe src="https://example.com" frameborder="0"></iframe>
@@ -503,9 +505,7 @@ function openURLInAboutBlank() {
         <input type="text" id="tabNameInput" placeholder="Enter tab name">
         <button onclick="applyTabName()">Apply Tab Name</button>
         <button onclick="resetChanges()">Reset (Reload)</button>
-        <label for="panicKey">Enter Panic Button Key:</label>
-        <input type="text" id="panicKey" placeholder="Enter a key...">
-        <button id="applyButton">Apply</button>
+        
     </div>
 <style>
  .container {
