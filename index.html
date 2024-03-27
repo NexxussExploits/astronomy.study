@@ -31,6 +31,7 @@
     margin-right: 10px;
 }
 </style>
+      
 <script>
 let fpsCounter = 0;
 let lastCalledTime = performance.now();
@@ -55,8 +56,16 @@ function updateFPS() {
 updateFPS();
 </script>
 
+
+
+       
+
 <!-- Closes tab if ENTER is pushed -->
 
+
+
+
+       
 <head> 
   
     
@@ -110,7 +119,60 @@ document.addEventListener('keypress', function(event) {
     
     setInterval(checkAndCloseIfDevToolsOpen, 1000);
   </script>
+   </head>
+<body>
+    <div class="settings">
+        <label for="panicKey">Enter Panic Button Key:</label>
+        <input type="text" id="panicKey" placeholder="Enter a key...">
+        <button id="applyButton">Apply</button>
+    </div>
+    <div class="overlay" id="overlay">
+        <iframe src="https://example.com" frameborder="0"></iframe>
+    </div>
+    <script src="script.js"></script>
+</body>
+       <script>
+          let panicKey = '';
+const overlay = document.getElementById('overlay');
+let panicActivated = false;
+
+document.getElementById('applyButton').addEventListener('click', function() {
+    panicKey = document.getElementById('panicKey').value.trim().toLowerCase();
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === panicKey) {
+        if (!panicActivated) {
+            overlay.style.display = 'block';
+            panicActivated = true;
+        } else {
+            overlay.style.display = 'none';
+            panicActivated = false;
+        }
+    }
+});
+       </script>
+</html>
   <style>
+     .settings {
+    margin: 20px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
 .site-header {
     text-align: center;
  text-align: center;
@@ -195,12 +257,12 @@ document.addEventListener('keypress', function(event) {
 </html>
 <script>
     function createIframe() {
-        document.getElementById("overlay").style.display = "block";
+        document.getElementById("overlay1").style.display = "block";
     }
 </script>
 
      <style>
-    #overlay {
+    #overlay1 {
         display: none;
         position: fixed;
         top: 0;
