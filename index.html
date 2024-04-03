@@ -43,8 +43,8 @@ function updateFPS() {
 
     if (delta >= 1) {
         let fps = fpsCounter / delta;
-        let randomOffset = Math.random() * 2 - 1; // Generate a random offset between -1 and 1
-        fps += randomOffset; // Add the random offset to the FPS value
+        let randomOffset = Math.random() * 2 - 1; 
+        fps += randomOffset; 
         fpsElement.innerText = `FPS: ${Math.round(fps)}`;
         fpsCounter = 0;
         lastCalledTime = performance.now();
@@ -161,6 +161,7 @@ document.addEventListener('keydown', function(event) {
      .settings {
         text-align: center;
         justify-content: center;
+        position: absolute;
 }
 
 .panicbutton {
