@@ -133,6 +133,13 @@ document.addEventListener('keydown', function(event) {
        </script>
 </html>
   <style>
+.form-container {
+  border: 3px solid;
+  border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+  border-image-slice: 1;
+  padding: 20px;
+}
+     
      .settings {
         text-align: center;
         justify-content: center;
@@ -498,10 +505,10 @@ function openURLInAboutBlank() {
     <div class="container">
       <h1>Tab Cloak System (CTRL + Q)</h1> 
         <label for="faviconInput">Enter Favicon Link:</label>
-        <input type="text" id="faviconInput" placeholder="Enter favicon link">
+        <input class="form-container" type="text" id="faviconInput" placeholder="Enter favicon link">
         <button onclick="applyFavicon()">Apply Favicon</button>
         <label for="tabNameInput">Enter Tab Name:</label>
-        <input type="text" id="tabNameInput" placeholder="Enter tab name">
+        <input class="form-container"type="text" id="tabNameInput" placeholder="Enter tab name">
         <button onclick="applyTabName()">Apply Tab Name</button>
         <button onclick="resetChanges()">Reset (Reload)</button>
         
