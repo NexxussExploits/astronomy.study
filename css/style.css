@@ -32,3 +32,15 @@ body {
   canvas {
     display: block;
   }
+
+.fps-ping {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+#fps, #ping {
+    margin-right: 10px;
+}
