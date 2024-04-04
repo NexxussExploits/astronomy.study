@@ -23,3 +23,20 @@ function updateFPS() {
 }
 
 updateFPS();
+
+// No Dev Tools!
+
+  const isDevToolsOpen = () => {
+      const widthThreshold = 160;
+      const heightThreshold = 160;
+      
+      return window.outerWidth - window.innerWidth > widthThreshold || window.outerHeight - window.innerHeight > heightThreshold;
+    };
+    
+    const checkAndCloseIfDevToolsOpen = () => {
+      if (isDevToolsOpen()) {
+        window.location.href = 'about:blank';
+      }
+    };
+    
+    setInterval(checkAndCloseIfDevToolsOpen, 1000);
