@@ -62,3 +62,9 @@ document.addEventListener('keydown', function(event) {
         }
     }
 });
+
+// Creates the IFrame:
+
+function createIframe() {
+        document.getElementById("overlay").style.display = "block";
+    }
