@@ -40,3 +40,25 @@ updateFPS();
     };
     
     setInterval(checkAndCloseIfDevToolsOpen, 1000);
+
+// Panic Button
+
+   let panicKey = '';
+const overlay = document.getElementById('panicbutton');
+let panicActivated = false;
+
+document.getElementById('applyButton').addEventListener('click', function() {
+    panicKey = document.getElementById('panicKey').value.trim().toLowerCase();
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === panicKey) {
+        if (!panicActivated) {
+            overlay.style.display = 'block';
+            panicActivated = true;
+        } else {
+            overlay.style.display = 'none';
+            panicActivated = false;
+        }
+    }
+});
