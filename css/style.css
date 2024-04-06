@@ -289,3 +289,17 @@ iframe {
   justify-content: center;
   color: white;
 }
+
+
+canvas {
+position: absolute;
+top: 0;
+left: 0;
+pointer-events: none;
+    }
+    
+#buttons {
+flex-direction: column;
+align-items: center;
+gap: 10px;
+    }
