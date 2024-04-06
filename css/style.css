@@ -279,3 +279,13 @@ iframe {
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.copyright {
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
