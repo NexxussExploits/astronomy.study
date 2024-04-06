@@ -68,3 +68,74 @@ document.addEventListener('keydown', function(event) {
 function createIframe() {
         document.getElementById("overlay").style.display = "block";
     }
+
+          const canvas = document.getElementById('pixel-canvas');
+          const ctx = canvas.getContext('2d');
+          const buttonsContainer = document.getElementById('buttons');
+    
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+    
+          const pixels = [];
+          const pixelCount = 200;
+    
+          function initPixels() {
+            for (let i = 0; i < pixelCount; i++) {
+              pixels.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: Math.random() * 4 - 2,
+                vy: Math.random() * 4 - 2,
+                size: Math.random() * 3 + 1,
+                color: '#8a2be2'
+              });
+            }
+          }
+    
+          function updatePixels() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+            for (let i = 0; i < pixels.length; i++) {
+              const pixel = pixels[i];
+    
+              pixel.x += pixel.vx;
+              pixel.y += pixel.vy;
+    
+              // Boundary checks to keep pixels within the visible area
+              if (pixel.x < 0 || pixel.x > canvas.width - pixel.size) {
+                pixel.vx = -pixel.vx;
+              }
+    
+              if (pixel.y < 0 || pixel.y > canvas.height - pixel.size) {
+                pixel.vy = -pixel.vy;
+              }
+    
+              ctx.fillStyle = pixel.color;
+              ctx.fillRect(pixel.x, pixel.y, pixel.size, pixel.size);
+            }
+          }
+    
+          function animate() {
+            updatePixels();
+            requestAnimationFrame(animate);
+          }
+    
+          function startAnimation() {
+            initPixels();
+            animate();
+            // Display buttons immediately without delay
+          }
+    
+          window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+          });
+    
+          startAnimation();
+       
+    document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'q') {
+        // Call your desired function here
+        createIframe();
+    }
+});
