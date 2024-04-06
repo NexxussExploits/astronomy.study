@@ -139,3 +139,10 @@ function createIframe() {
         createIframe();
     }
 });
+
+function openURLInAboutBlank() {
+  var url = 'https://www.google.com';
+  var newTab = window.open('about:blank', '_blank');
+  newTab.document.write('<html><head><title>Google</title></head><body><iframe src="' + url + '" style="border: none; width: 100vw; height: 100vh;"></iframe></body></html>');
+}
+</script>
