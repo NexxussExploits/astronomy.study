@@ -134,15 +134,15 @@ iframe {
 
     .runner-container {
       max-width: 10%;
-      margin: 0 auto;
+      margin: 2mm;
       padding: 20px;
       background-color: #1a1a1a;
       border: 1px solid #1a1a1a;
       border-radius: 5px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       position: fixed;
-      top: 5px;
-      right: 5px;
+      top: 0;
+      right: 0;
     }
     
     .runner-input {
