@@ -141,8 +141,8 @@ iframe {
       border-radius: 5px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       position: fixed;
-      top: 2;
-      right: 2;
+      top: 5px;
+      right: 5px;
     }
     
     .runner-input {
