@@ -82,12 +82,11 @@ body {
 }
      
      .settings {
-        text-align: center;
-        justify-content: center;
-        bottom: 0;
-         left: 0;
-  
-        
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 2mm; 
+    left: 2mm; 
 }
 
 .panicbutton {
@@ -100,6 +99,7 @@ body {
     background: rgba(0, 0, 0, 0.7);
     z-index: 9999;
 }
+
 
 iframe {
     width: 100%;
